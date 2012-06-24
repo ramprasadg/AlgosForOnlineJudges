@@ -1,3 +1,7 @@
+/*
+http://www.codechef.com/problems/EASYPROB
+*/
+
 #include<iostream>
 using namespace std;
 
