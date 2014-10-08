@@ -1,5 +1,4 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /**
  * 
@@ -10,14 +9,13 @@ import java.io.InputStreamReader;
 class CIELRCPT {
 
 	public static void main(String[] args) throws Exception {
-		BufferedReader bufferedReader = new BufferedReader(
-				new InputStreamReader(System.in));
-		int test = Integer.parseInt(bufferedReader.readLine());
+		Scanner in = new Scanner(System.in);
+		int test = in.nextInt();
 		
 		for (int i = 0; i < test; i++) {
 			int n, m, k;
 			
-			n = Integer.parseInt(bufferedReader.readLine());
+			n = in.nextInt();
 			k = n / 2048;
 			n = n % 2048;
 			while (n >= 1) {
