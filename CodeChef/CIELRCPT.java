@@ -9,6 +9,11 @@ import java.util.Scanner;
 class CIELRCPT {
 
 	public static void main(String[] args) throws Exception {
+		
+		Integer.MAX_VALUE;
+		String string;
+		string.charAt(index)
+		
 		Scanner in = new Scanner(System.in);
 		int test = in.nextInt();
 		
@@ -27,4 +32,5 @@ class CIELRCPT {
 			System.out.println(k);
 		}			
 	}
+	
 }

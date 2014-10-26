@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class knapsack {
+public class Knapsack {
 	
 	private static class Item {
 		public int value;
