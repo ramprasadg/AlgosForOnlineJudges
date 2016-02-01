@@ -1,3 +1,4 @@
+package generic;
 import java.util.Scanner;
 
 
