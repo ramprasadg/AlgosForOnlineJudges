@@ -1,20 +1,20 @@
-package generic;
+package generic.string;
 public class KMP {
     
     int[] prefix;
     
     public KMP(String pattern) {
         prefix = new int[pattern.length()];
-        int len = 0;
-        prefix[0] = len;
+        int j = 0;
+        prefix[0] = j;
         for(int i = 1; i<pattern.length();) {
-            if(pattern.charAt(i) == pattern.charAt(len)) {
-                len++;
-                prefix[i] = len;
+            if(pattern.charAt(i) == pattern.charAt(j)) {
+                j++;
+                prefix[i] = j;
                 i++;
             } else {
-                if(len > 0) {
-                    len = prefix[len-1];
+                if(j > 0) {
+                    j = prefix[j-1];
                 } else {
                     prefix[i] = 0;
                     i++;
@@ -29,8 +29,7 @@ public class KMP {
     }
     
     public static void main(String[] args) {
-        new KMP("ABCABCABCDE");
-        new KMP("ABABDABACDABABCABAB");
+        new KMP("AAABAAA");
     }
     
 }

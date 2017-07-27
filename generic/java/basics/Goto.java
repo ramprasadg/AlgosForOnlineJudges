@@ -1,4 +1,4 @@
-package javabasics;
+package generic.java.basics;
 
 public class Goto {
 
