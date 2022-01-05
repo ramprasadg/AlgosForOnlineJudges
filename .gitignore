@@ -173,3 +173,16 @@ pip-log.txt
 ########
 
 a.out
+
+#############
+## IntelliJ
+#############
+
+.idea
+AlgosForOnlineJudges.iml
+
+#############
+## Maven
+#############
+
+target
