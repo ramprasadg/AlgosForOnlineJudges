@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.interview.honeywell;
+package com.ramprasadg.interview.honeywell;
 
 import static org.junit.Assert.*;
 

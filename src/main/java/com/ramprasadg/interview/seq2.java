@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.interview;
+package com.ramprasadg.interview;
 
 public class seq2 {
     static int gcd(int a, int b) {

@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.interview.vmware;
+package com.ramprasadg.interview.vmware;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

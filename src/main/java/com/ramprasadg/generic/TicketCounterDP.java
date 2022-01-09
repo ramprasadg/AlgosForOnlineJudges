@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic;
+package com.ramprasadg.generic;
 
 public class TicketCounterDP {
     static int input[][] = { { 1, 2, 1 }, { 1, 1, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, };

@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.leetcode;
+package com.ramprasadg.leetcode;
 
 //https://leetcode.com/problems/circular-array-loop/
 public class CircularArrayLoop {

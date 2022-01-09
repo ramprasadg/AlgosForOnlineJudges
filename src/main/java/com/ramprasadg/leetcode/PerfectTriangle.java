@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.leetcode;
+package com.ramprasadg.leetcode;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

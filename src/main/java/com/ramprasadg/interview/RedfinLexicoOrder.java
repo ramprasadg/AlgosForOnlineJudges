@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.interview;
+package com.ramprasadg.interview;
 
 public class RedfinLexicoOrder {
 

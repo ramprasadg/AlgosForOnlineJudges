@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.hackerrank;
+package com.ramprasadg.hackerrank;
 
 public class PalindromeSubsequence {
     

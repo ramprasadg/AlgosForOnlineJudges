@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic.dp;
+package com.ramprasadg.generic.dp;
 
 public class LongestCommonSubsequence {
     public static String find(String a, String b) {

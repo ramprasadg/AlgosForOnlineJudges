@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.interview;
+package com.ramprasadg.interview;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

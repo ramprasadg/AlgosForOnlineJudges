@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.interview.google;
+package com.ramprasadg.interview.google;
 
 import java.util.PriorityQueue;
 

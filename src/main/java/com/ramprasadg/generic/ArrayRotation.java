@@ -1,6 +1,6 @@
-package src.main.java.com.ramprasadg.generic;
+package com.ramprasadg.generic;
 
-import src.main.java.com.ramprasadg.utils.Utils;
+import com.ramprasadg.utils.Utils;
 
 public class ArrayRotation {
     public static void main(String args[]) {

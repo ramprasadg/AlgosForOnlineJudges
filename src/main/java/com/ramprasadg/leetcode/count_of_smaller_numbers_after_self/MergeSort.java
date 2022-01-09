@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.leetcode.count_of_smaller_numbers_after_self;
+package com.ramprasadg.leetcode.count_of_smaller_numbers_after_self;
 
 import static org.junit.Assert.*;
 

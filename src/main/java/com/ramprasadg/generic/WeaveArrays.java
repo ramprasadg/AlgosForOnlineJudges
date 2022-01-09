@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic;
+package com.ramprasadg.generic;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.interview.coinbase;
+package com.ramprasadg.interview.coinbase;
 
 import java.util.Arrays;
 import java.util.Scanner;

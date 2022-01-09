@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic.string;
+package com.ramprasadg.generic.string;
 public class KMP {
     
     int[] prefix;

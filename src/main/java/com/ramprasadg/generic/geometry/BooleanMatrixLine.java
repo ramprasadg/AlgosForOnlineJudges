@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic.geometry;
+package com.ramprasadg.generic.geometry;
 
 public class BooleanMatrixLine {
     public static void main(String args[]) {

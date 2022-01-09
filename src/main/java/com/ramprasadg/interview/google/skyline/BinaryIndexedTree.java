@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.interview.google.skyline;
+package com.ramprasadg.interview.google.skyline;
 
 import java.util.*;
 

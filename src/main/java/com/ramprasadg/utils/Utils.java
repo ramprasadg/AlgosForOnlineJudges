@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.utils;
+package com.ramprasadg.utils;
 
 public class Utils {
     static <T> void printArray(T[] arr) {

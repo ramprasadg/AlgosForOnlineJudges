@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic.datastructures;
+package com.ramprasadg.generic.datastructures;
 
 import static org.junit.Assert.*;
 

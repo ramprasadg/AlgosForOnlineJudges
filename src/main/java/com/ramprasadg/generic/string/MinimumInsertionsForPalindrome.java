@@ -1,10 +1,10 @@
-package src.main.java.com.ramprasadg.generic.string;
+package com.ramprasadg.generic.string;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import src.main.java.com.ramprasadg.utils.Utils;
+import com.ramprasadg.utils.Utils;
 
 //http://www.geeksforgeeks.org/dynamic-programming-set-28-minimum-insertions-to-form-a-palindrome/
 public class MinimumInsertionsForPalindrome {

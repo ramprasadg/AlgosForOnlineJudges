@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic.trees.binarytree;
+package com.ramprasadg.generic.trees.binarytree;
 
 import org.junit.Test;
 

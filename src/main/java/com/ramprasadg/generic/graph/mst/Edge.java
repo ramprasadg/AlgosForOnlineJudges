@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic.graph.mst;
+package com.ramprasadg.generic.graph.mst;
 
 public class Edge {
     String vertex1Name;

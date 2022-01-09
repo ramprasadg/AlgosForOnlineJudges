@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.amazon;
+package com.ramprasadg.amazon;
 
 import java.util.*;
 

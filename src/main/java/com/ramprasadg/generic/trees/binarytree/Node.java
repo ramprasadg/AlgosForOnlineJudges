@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic.trees.binarytree;
+package com.ramprasadg.generic.trees.binarytree;
 
 public class Node {
     public int value;

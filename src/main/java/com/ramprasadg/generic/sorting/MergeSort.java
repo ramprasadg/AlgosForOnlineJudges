@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic.sorting;
+package com.ramprasadg.generic.sorting;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import src.main.java.com.ramprasadg.utils.Utils;
+import com.ramprasadg.utils.Utils;
 
 public class MergeSort {
 

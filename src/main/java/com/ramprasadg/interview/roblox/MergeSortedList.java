@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.interview.roblox;
+package com.ramprasadg.interview.roblox;
 
 import java.util.ArrayList;
 import java.util.List;

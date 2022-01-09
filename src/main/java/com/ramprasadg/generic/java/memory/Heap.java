@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic.java.memory;
+package com.ramprasadg.generic.java.memory;
 import java.util.*;
 
 public class Heap {

@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.interview;
+package com.ramprasadg.interview;
 
 import java.util.AbstractQueue;
 import java.util.Collection;

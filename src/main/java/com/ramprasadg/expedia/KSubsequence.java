@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.expedia;
+package com.ramprasadg.expedia;
 
 import static org.junit.Assert.*;
 

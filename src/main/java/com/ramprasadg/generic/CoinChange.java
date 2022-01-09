@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic;
+package com.ramprasadg.generic;
 
 /*
  * http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/

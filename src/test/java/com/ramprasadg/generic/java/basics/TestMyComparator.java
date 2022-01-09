@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic.java.basics;
+package com.ramprasadg.generic.java.basics;
 
 import java.util.Arrays;
 
@@ -8,7 +8,7 @@ import java.util.*;
 
 import org.junit.Test;
 
-public class ComparatorExample {
+public class TestMyComparator {
     @Test
     public void test1() {
         Integer[] arr = { 1, 3, 2 };

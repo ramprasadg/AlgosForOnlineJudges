@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic;
+package com.ramprasadg.generic;
 
 public class MaxSumSubArray {
     public static void main (String args[]) {

@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.generic.string;
+package com.ramprasadg.generic.string;
 
 /**
  * Date 07/07/2014

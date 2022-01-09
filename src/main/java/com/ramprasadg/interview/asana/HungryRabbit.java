@@ -1,4 +1,4 @@
-package src.main.java.com.ramprasadg.interview.asana;
+package com.ramprasadg.interview.asana;
 
 import static org.junit.Assert.*;
 
