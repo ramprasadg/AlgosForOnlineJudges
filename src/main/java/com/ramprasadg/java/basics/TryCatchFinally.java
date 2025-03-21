@@ -1,4 +1,4 @@
-package com.ramprasadg.generic.java.basics;
+package com.ramprasadg.java.basics;
 
 import org.junit.Test;
 
