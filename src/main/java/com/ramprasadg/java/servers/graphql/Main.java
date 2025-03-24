@@ -11,7 +11,9 @@ import graphql.kickstart.servlet.GraphQLHttpServlet;
 import graphql.schema.GraphQLSchema;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
 
 public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
@@ -35,24 +37,22 @@ public class Main {
         GraphQLSchema schema = schemaProvider.getReadOnlySchema();
         GraphQLConfiguration config = GraphQLConfiguration.with(schema).build();
 
-        // Initialize GraphQL servlet
+        // Create and configure Jetty Server
+        Server server = new Server(8080);
+        ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+        context.setContextPath("/");
+        server.setHandler(context);
+        // Add GraphQL servlet
         GraphQLHttpServlet graphQLServlet = GraphQLHttpServlet.with(config);
+        ServletHolder holder = new ServletHolder(graphQLServlet);
+        context.addServlet(holder, "/graphql");
 
-        // Create Spark service
-        spark.Service http = spark.Service.ignite();
-        http.port(8080);
-
-        // Handle GraphQL POST requests
-        http.post("/graphql", (request, response) -> {
-            response.type("application/json");
-            graphQLServlet.service(request.raw(), response.raw());
-            return response.body();
-        });
-
-        // Add a test endpoint
-        http.get("/test", (req, res) -> "GraphQL Server is running!");
-
-        // Log server start
-        logger.info("Server started on port 8080");
+        try {
+            server.start();
+            logger.info("Server started on port 8080");
+            server.join();
+        } catch (Exception e) {
+            logger.error("Error starting server", e);
+        }
     }
 }

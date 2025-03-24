@@ -51,7 +51,7 @@
     <dependency>
       <groupId>com.graphql-java-kickstart</groupId>
       <artifactId>graphql-java-servlet</artifactId>
-      <version>11.1.0</version>
+      <version>15.0.0</version>
     </dependency>
     <!-- SQLite JDBC Driver -->
     <dependency>
@@ -109,22 +109,17 @@
     <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-server</artifactId>
-        <version>9.4.48.v20220622</version>
+        <version>11.0.15</version>
     </dependency>
     <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-servlet</artifactId>
-        <version>9.4.48.v20220622</version>
+        <version>11.0.15</version>
     </dependency>
     <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-util</artifactId>
-        <version>9.4.48.v20220622</version>
-    </dependency>
-    <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>3.1.0</version>
+        <version>11.0.15</version>
     </dependency>
   </dependencies>
 
