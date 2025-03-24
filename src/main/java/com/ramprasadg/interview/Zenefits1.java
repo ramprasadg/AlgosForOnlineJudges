@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import java.util.LinkedList;
 import java.util.List;
-
 import org.junit.Test;
 
 public class Zenefits1 {
@@ -24,7 +23,7 @@ public class Zenefits1 {
                     return true;
                 }
             } else {
-                if (! list.isEmpty() && list.get(list.size() - 1) + 1 != arr[i]) {
+                if (!list.isEmpty() && list.get(list.size() - 1) + 1 != arr[i]) {
                     list.clear();
                 }
             }
@@ -35,25 +34,25 @@ public class Zenefits1 {
 
     @Test
     public void test1() {
-        int arr[] = { 1, 2, 2, 3, 3, 4, 5, 5 };
+        int arr[] = {1, 2, 2, 3, 3, 4, 5, 5};
         assertFalse(contains_bomb(arr));
     }
 
     @Test
     public void test2() {
-        int arr[] = { 1, 2, 2, 3, 3, 4, 4, 5 };
+        int arr[] = {1, 2, 2, 3, 3, 4, 4, 5};
         assertTrue(contains_bomb(arr));
     }
 
     @Test
     public void test3() {
-        int arr[] = { 1, 1, 2, 2, 4, 4 };
+        int arr[] = {1, 1, 2, 2, 4, 4};
         assertFalse(contains_bomb(arr));
     }
 
     @Test
     public void test4() {
-        int arr[] = { 1, 1, 2, 2, 3, 3, 3, 3, 4, 4 };
+        int arr[] = {1, 1, 2, 2, 3, 3, 3, 3, 4, 4};
         assertTrue(contains_bomb(arr));
     }
 }

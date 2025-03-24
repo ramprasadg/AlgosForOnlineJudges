@@ -23,4 +23,3 @@ public class User {
         return email;
     }
 }
-

@@ -4,14 +4,13 @@ import static org.junit.Assert.*;
 
 import java.math.BigInteger;
 import java.util.Arrays;
-
 import org.junit.Test;
 
 public class LexicographicOrderRank {
 
     static final long M = 1000000007;
 
-    static public long factorial(int n) {
+    public static long factorial(int n) {
         long factorial = 1;
         for (int i = 1; i <= n; i++) {
             factorial = mod((factorial * i));
@@ -19,7 +18,7 @@ public class LexicographicOrderRank {
         return factorial;
     }
 
-    static public long mod(long a) {
+    public static long mod(long a) {
         a = a % M;
         if (a < 0) {
             a += M;
@@ -27,7 +26,7 @@ public class LexicographicOrderRank {
         return a;
     }
 
-    static public void print(char[] ch) {
+    public static void print(char[] ch) {
         for (int i = 0; i < ch.length; i++) {
             System.out.print(ch[i]);
         }
@@ -54,8 +53,19 @@ public class LexicographicOrderRank {
                 print(inputString);
                 System.out.print("sorted= ");
                 print(sortedString);
-                System.out.println("i=" + i + " j=" + j + " inputString[i]= " + inputString[i] + " sortedString[j]="
-                        + sortedString[j] + " rank=" + rank + " remainingLength=" + remainingLength);
+                System.out.println(
+                        "i="
+                                + i
+                                + " j="
+                                + j
+                                + " inputString[i]= "
+                                + inputString[i]
+                                + " sortedString[j]="
+                                + sortedString[j]
+                                + " rank="
+                                + rank
+                                + " remainingLength="
+                                + remainingLength);
 
                 if (sortedString[j] == '-')
                     continue;
@@ -161,12 +171,14 @@ public class LexicographicOrderRank {
     @Test
     public void modTest1() {
         long a = 1;
-        assertEquals(BigInteger.valueOf(a).modInverse(BigInteger.valueOf(M)).intValue(), inverse(a));
+        assertEquals(BigInteger.valueOf(a).modInverse(BigInteger.valueOf(M)).intValue(),
+                inverse(a));
     }
 
     @Test
     public void modTest2() {
         long a = M + 1;
-        assertEquals(BigInteger.valueOf(a).modInverse(BigInteger.valueOf(M)).intValue(), inverse(a));
+        assertEquals(BigInteger.valueOf(a).modInverse(BigInteger.valueOf(M)).intValue(),
+                inverse(a));
     }
 }

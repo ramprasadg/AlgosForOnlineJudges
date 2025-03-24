@@ -2,7 +2,7 @@ package com.ramprasadg.java.threads.ProducerConsumer.WaitNotify;
 
 import java.util.Queue;
 
-public class Consumer implements Runnable{
+public class Consumer implements Runnable {
 
     Queue<Integer> queue;
 
@@ -16,7 +16,7 @@ public class Consumer implements Runnable{
         while (true) {
             synchronized (queue) {
                 try {
-                    while(queue.isEmpty()) {
+                    while (queue.isEmpty()) {
                         System.out.println("Queue is empty, Consumer is waiting...");
                         queue.wait();
                     }
@@ -28,9 +28,9 @@ public class Consumer implements Runnable{
                     return; // Exit if interrupted
                 }
             }
-            if(System.currentTimeMillis() - currentTime > 10_000 && queue.isEmpty()) {
+            if (System.currentTimeMillis() - currentTime > 10_000 && queue.isEmpty()) {
                 break;
             }
         }
-    }    
+    }
 }

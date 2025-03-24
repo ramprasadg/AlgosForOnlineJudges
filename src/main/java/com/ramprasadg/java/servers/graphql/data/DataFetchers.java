@@ -1,11 +1,10 @@
 package com.ramprasadg.java.servers.graphql.data;
 
 import graphql.schema.DataFetcher;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.List;
 import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DataFetchers {
     private static final Logger logger = LoggerFactory.getLogger(DataFetchers.class);
@@ -66,7 +65,8 @@ public class DataFetchers {
             String title = arguments.get("title").toString();
             String content = arguments.get("content").toString();
             int userId = Integer.parseInt(arguments.get("userId").toString());
-            logger.info("Adding post with title: {}, content: {} and userId: {}", title, content, userId);
+            logger.info("Adding post with title: {}, content: {} and userId: {}", title, content,
+                    userId);
             Post post = new Post(0, title, content, userId);
             postRepository.addPost(post);
             return post;

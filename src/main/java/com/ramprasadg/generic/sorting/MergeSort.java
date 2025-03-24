@@ -2,11 +2,9 @@ package com.ramprasadg.generic.sorting;
 
 import static org.junit.Assert.*;
 
-import java.util.Arrays;
-
-import org.junit.Test;
-
 import com.ramprasadg.utils.Utils;
+import java.util.Arrays;
+import org.junit.Test;
 
 public class MergeSort {
 
@@ -75,9 +73,9 @@ public class MergeSort {
 
     @Test
     public void test() {
-        int[] arr = { 2, 1, 0 };
+        int[] arr = {2, 1, 0};
         Arrays.sort(arr);
-        int[] arr1 = { 2, 1, 0 };
+        int[] arr1 = {2, 1, 0};
         sort(arr1);
         for (int i = 0; i < arr.length; i++) {
             assertEquals(arr[i], arr1[i]);

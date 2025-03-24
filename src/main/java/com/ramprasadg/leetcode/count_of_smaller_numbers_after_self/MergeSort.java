@@ -3,10 +3,9 @@ package com.ramprasadg.leetcode.count_of_smaller_numbers_after_self;
 import static org.junit.Assert.*;
 
 import java.util.*;
-
 import org.junit.Test;
 
-//https://discuss.leetcode.com/topic/31554/11ms-java-solution-using-merge-sort-with-explanation
+// https://discuss.leetcode.com/topic/31554/11ms-java-solution-using-merge-sort-with-explanation
 public class MergeSort {
     int[] count;
 
@@ -86,15 +85,15 @@ public class MergeSort {
 
     @Test
     public void test1() {
-        List<Integer> result = countSmaller(new int[] { 2, 1 });
-        List<Integer> expected = Arrays.asList(new Integer[] { 1, 0 });
+        List<Integer> result = countSmaller(new int[]{2, 1});
+        List<Integer> expected = Arrays.asList(new Integer[]{1, 0});
         assertEquals(expected, result);
     }
 
     @Test
     public void test2() {
-        List<Integer> result = countSmaller(new int[] { 5, 2, 6, 1 });
-        List<Integer> expected = Arrays.asList(new Integer[] { 2, 1, 1, 0 });
+        List<Integer> result = countSmaller(new int[]{5, 2, 6, 1});
+        List<Integer> expected = Arrays.asList(new Integer[]{2, 1, 1, 0});
         assertEquals(expected, result);
     }
 }

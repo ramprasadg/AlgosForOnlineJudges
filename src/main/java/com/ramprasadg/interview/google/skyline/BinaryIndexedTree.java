@@ -2,7 +2,7 @@ package com.ramprasadg.interview.google.skyline;
 
 import java.util.*;
 
-//https://discuss.leetcode.com/topic/54780/java-binary-indexed-tree-solution/2
+// https://discuss.leetcode.com/topic/54780/java-binary-indexed-tree-solution/2
 public class BinaryIndexedTree {
     private int[] biTree;
 
@@ -26,19 +26,21 @@ public class BinaryIndexedTree {
         List<int[]> list = new ArrayList<int[]>();
 
         int[][] xidx = new int[buildings.length * 2][3]; // array of [x, i/o,
-                                                         // idx]
+        // idx]
         for (int i = 0; i < buildings.length; i++) {
-            xidx[2 * i] = new int[] { buildings[i][0], 1, i }; // in
-            xidx[2 * i + 1] = new int[] { buildings[i][1], 2, i }; // out
+            xidx[2 * i] = new int[]{buildings[i][0], 1, i}; // in
+            xidx[2 * i + 1] = new int[]{buildings[i][1], 2, i}; // out
         }
 
-        Arrays.sort(xidx, (a, b) -> {
-            if (a[0] != b[0])
-                return a[0] - b[0]; // sort from left to right
-            else
-                return a[1] - b[1]; // in before out; otherwise, <out, 0> will
-                                    // be add to the list and cause problem
-        });
+        Arrays.sort(
+                xidx,
+                (a, b) -> {
+                    if (a[0] != b[0])
+                        return a[0] - b[0]; // sort from left to right
+                    else
+                        return a[1] - b[1]; // in before out; otherwise, <out, 0> will
+                    // be add to the list and cause problem
+                });
 
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         int num = 0;
@@ -57,7 +59,7 @@ public class BinaryIndexedTree {
                 add(map.get(r), h);
             } else {
                 l = buildings[x[2]][1]; // assign r to l, to find hight after
-                                        // the building end
+                // the building end
             }
 
             int tmp = find(map.get(l) + 1); // find the highest after
@@ -65,10 +67,10 @@ public class BinaryIndexedTree {
             if (tmp != curhigh) {
                 int size = list.size();
                 if (size > 0 && list.get(size - 1)[0] == l) { // 2 hight with
-                                                              // the same x
+                    // the same x
                     curhigh = list.get(size - 1)[1] = Math.max(tmp, list.get(size - 1)[1]);
                 } else {
-                    list.add(new int[] { l, tmp });
+                    list.add(new int[]{l, tmp});
                     curhigh = tmp;
                 }
             }

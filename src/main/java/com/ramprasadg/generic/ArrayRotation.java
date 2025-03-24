@@ -4,10 +4,10 @@ import com.ramprasadg.utils.Utils;
 
 public class ArrayRotation {
     public static void main(String args[]) {
-        int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         rotateReverse(arr, 3);
         Utils.printArray(arr);
-        int arr1[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        int arr1[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         rotateGcd(arr1, 3);
         Utils.printArray(arr1);
     }
@@ -18,12 +18,12 @@ public class ArrayRotation {
         for (int i = 0; i < gcd; i++) {
             int j = i;
             int temp = arr[j];
-            while(true) {
+            while (true) {
                 int k = j + rotate;
-                while(k >= arr.length) {
+                while (k >= arr.length) {
                     k = k - arr.length;
                 }
-                if(k == i) {
+                if (k == i) {
                     break;
                 }
                 arr[j] = arr[k];
@@ -34,7 +34,7 @@ public class ArrayRotation {
     }
 
     private static int gcd(int a, int b) {
-        if(b == 0) {
+        if (b == 0) {
             return a;
         } else {
             return gcd(b, a % b);

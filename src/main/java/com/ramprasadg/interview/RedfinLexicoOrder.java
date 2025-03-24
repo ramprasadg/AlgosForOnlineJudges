@@ -31,29 +31,27 @@ public class RedfinLexicoOrder {
 
     // A function to find rank of a string in all permutations
     // of characters
-    static int findRank (String str)
-    {
+    static int findRank(String str) {
         int len = str.length();
         int mul = fact(len);
         int rank = 0, i;
-        int count[] = new int[MAX_CHAR];  // all elements of count[] are initialized with 0
-     
-        // Populate the count array such that count[i] contains count of 
+        int count[] = new int[MAX_CHAR]; // all elements of count[] are initialized with 0
+
+        // Populate the count array such that count[i] contains count of
         // characters which are present in str and are smaller than i
-        populateAndIncreaseCount( count, str );
-     
-        for (i = 0; i < len; ++i)
-        {
+        populateAndIncreaseCount(count, str);
+
+        for (i = 0; i < len; ++i) {
             mul /= len - i;
-     
+
             // count number of chars smaller than str[i]
             // fron str[i+1] to str[len-1]
-            rank += count[ str.charAt(i) - 1] * mul;
-     
+            rank += count[str.charAt(i) - 1] * mul;
+
             // Reduce count of characters greater than str[i]
-            updatecount (count, str.charAt(i));
+            updatecount(count, str.charAt(i));
         }
-     
+
         return rank;
     }
 
@@ -64,5 +62,4 @@ public class RedfinLexicoOrder {
         System.out.println(findRank("abba"));
         System.out.println(findRank("caabbc"));
     }
-
 }

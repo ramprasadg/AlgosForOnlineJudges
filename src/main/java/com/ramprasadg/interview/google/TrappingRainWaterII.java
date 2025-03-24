@@ -3,7 +3,6 @@ package com.ramprasadg.interview.google;
 import static org.junit.Assert.*;
 
 import java.util.PriorityQueue;
-
 import org.junit.Test;
 
 public class TrappingRainWaterII {
@@ -71,7 +70,8 @@ public class TrappingRainWaterII {
             visited[row][col] = true;
             return;
         } else {
-            System.out.println(row + ", " + col + " height = " + height[row][col] + ", bar = " + min);
+            System.out
+                    .println(row + ", " + col + " height = " + height[row][col] + ", bar = " + min);
             water += min - height[row][col];
             visited[row][col] = true;
             print(visited);
@@ -93,21 +93,21 @@ public class TrappingRainWaterII {
 
     @Test
     public void test1() {
-        int[][] arr = { 
-                { 1, 4, 3, 1, 3, 2 }, 
-                { 3, 2, 1, 3, 2, 4 }, 
-                { 2, 3, 3, 2, 3, 1 }
-                };
+        int[][] arr = {
+                {1, 4, 3, 1, 3, 2},
+                {3, 2, 1, 3, 2, 4},
+                {2, 3, 3, 2, 3, 1}
+        };
         assertEquals(4, trapRainWater(arr));
     }
 
     @Test
     public void test2() {
-        int[][] arr = { 
-                { 1, 4, 3, 1, 4, 2 }, 
-                { 3, 2, 1, 4, 2, 4 }, 
-                { 2, 3, 3, 2, 4, 1 } 
-                };
+        int[][] arr = {
+                {1, 4, 3, 1, 4, 2},
+                {3, 2, 1, 4, 2, 4},
+                {2, 3, 3, 2, 4, 1}
+        };
         assertEquals(5, trapRainWater(arr));
     }
 }

@@ -21,8 +21,7 @@ public class Consumer {
                             }
                         },
                         Throwable::printStackTrace,
-                        () -> System.out.println("Consumer completed")
-                );
+                        () -> System.out.println("Consumer completed"));
     }
 
     public void dispose() {

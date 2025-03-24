@@ -9,8 +9,9 @@ public class PeakElement {
         int start = 0;
         int end = nums.length;
         int mid = (start + end) / 2;
-        while((mid == 0 || nums[mid-1] > nums[mid]) || ( mid == nums.length-1 || nums[mid] < nums[mid+1]) && start != end) {
-            if(nums[mid-1] > nums[mid]) {
+        while ((mid == 0 || nums[mid - 1] > nums[mid])
+                || (mid == nums.length - 1 || nums[mid] < nums[mid + 1]) && start != end) {
+            if (nums[mid - 1] > nums[mid]) {
                 end = mid;
             } else {
                 start = mid;
@@ -19,16 +20,16 @@ public class PeakElement {
         }
         return mid;
     }
-    
+
     @Test
     public void testCase1() {
-        int arr[] = {2,1};
+        int arr[] = {2, 1};
         assertEquals(findPeakElement(arr), 0);
     }
-    
+
     @Test
     public void testCase2() {
-        int arr[] = {1,2};
+        int arr[] = {1, 2};
         assertEquals(findPeakElement(arr), 0);
     }
 }

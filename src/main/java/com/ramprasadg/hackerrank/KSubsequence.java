@@ -26,7 +26,7 @@ public class KSubsequence {
     }
 
     public static void main(String args[]) {
-        int arr[] = { 1, 2, 3, 4, 1 };
+        int arr[] = {1, 2, 3, 4, 1};
         KSubsequence ks = new KSubsequence();
         System.out.println(ks.find(arr, 3));
     }

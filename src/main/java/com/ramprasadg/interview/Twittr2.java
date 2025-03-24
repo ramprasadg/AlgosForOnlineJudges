@@ -3,7 +3,6 @@ package com.ramprasadg.interview;
 import static org.junit.Assert.*;
 
 import java.util.Scanner;
-
 import org.junit.Test;
 
 public class Twittr2 {
@@ -51,8 +50,8 @@ public class Twittr2 {
         if (sb.charAt(sb.length() - 1) == '-') {
             sb.deleteCharAt(sb.length() - 1);
         }
-        
-        return  sb.reverse().toString();
+
+        return sb.reverse().toString();
     }
 
     public static void main(String args[]) throws Exception {
@@ -138,5 +137,4 @@ public class Twittr2 {
         String phone = "P:+1(333) 456-7890";
         assertEquals(maskPhone(phone), "+*-***-***-7890");
     }
-
 }

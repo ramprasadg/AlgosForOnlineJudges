@@ -1,4 +1,5 @@
 package com.ramprasadg.interview;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -44,7 +45,7 @@ public class Booking2 {
             } else {
                 break;
             }
-            
+
             String review = null;
             if (s.hasNextLine()) {
                 review = s.nextLine();
@@ -75,15 +76,16 @@ public class Booking2 {
             output.add(p);
         }
 
-        output.sort(new Comparator<Pair>() {
-            @Override
-            public int compare(Pair o1, Pair o2) {
-                if (o1.count == o2.count) {
-                    return o1.id - o2.id;
-                }
-                return o2.count - o1.count;
-            }
-        });
+        output.sort(
+                new Comparator<Pair>() {
+                    @Override
+                    public int compare(Pair o1, Pair o2) {
+                        if (o1.count == o2.count) {
+                            return o1.id - o2.id;
+                        }
+                        return o2.count - o1.count;
+                    }
+                });
 
         System.out.print(output.get(0).id);
         for (int i = 1; i < output.size(); i++) {

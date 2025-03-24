@@ -6,7 +6,7 @@ import org.junit.Test;
 
 /**
  * segment tree with lazy propagation
- * 
+ *
  * @author rampg
  */
 public class SegmentTrees {
@@ -48,7 +48,8 @@ public class SegmentTrees {
         }
 
         int mid = (start + end) / 2;
-        return tree[k] = constructTree(arr, start, mid, 2 * k + 1) + constructTree(arr, mid + 1, end, 2 * k + 2);
+        return tree[k] = constructTree(arr, start, mid, 2 * k + 1)
+                + constructTree(arr, mid + 1, end, 2 * k + 2);
     }
 
     int findSum(int start, int end) {
@@ -67,8 +68,19 @@ public class SegmentTrees {
                 lazy[k] = 0;
             }
             int val = tree[k] + lazy[k] * (end - start + 1);
-            System.out.println("returning from k=" + k + " value=" + val + " start=" + start + " end=" + end + " tree="
-                    + tree[k] + " lazy=" + lazy[k]);
+            System.out.println(
+                    "returning from k="
+                            + k
+                            + " value="
+                            + val
+                            + " start="
+                            + start
+                            + " end="
+                            + end
+                            + " tree="
+                            + tree[k]
+                            + " lazy="
+                            + lazy[k]);
             return val;
         }
         int rangeMid = (rangeStart + rangeEnd) / 2;
@@ -78,7 +90,8 @@ public class SegmentTrees {
         lazy[k] = 0;
 
         return findSum(start, Math.min(end, rangeMid), rangeStart, rangeMid, 2 * k + 1, lazyValue)
-                + findSum(Math.max(start, rangeMid + 1), end, rangeMid + 1, rangeEnd, 2 * k + 2, lazyValue);
+                + findSum(Math.max(start, rangeMid + 1), end, rangeMid + 1, rangeEnd, 2 * k + 2,
+                        lazyValue);
     }
 
     void addXToRange(int start, int end, int x) {
@@ -107,7 +120,7 @@ public class SegmentTrees {
 
     @Test
     public void test1() {
-        int arr[] = { 1, 2, 3, 4 };
+        int arr[] = {1, 2, 3, 4};
         init(arr);
         printTree();
         printLazy();

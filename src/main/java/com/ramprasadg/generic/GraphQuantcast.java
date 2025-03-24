@@ -138,7 +138,7 @@ public class GraphQuantcast {
 
         List<String> outputDictionary = new ArrayList<String>();
         for (String string : dictionary) {
-            outer: for (List<Node> layerList : g.modifiedInput) {
+            outer : for (List<Node> layerList : g.modifiedInput) {
                 for (Node n : layerList) {
                     boolean endResult = g.dfs(n, string);
                     if (endResult) {
@@ -149,13 +149,14 @@ public class GraphQuantcast {
                 }
             }
         }
-        outputDictionary.sort(new Comparator<String>() {
+        outputDictionary.sort(
+                new Comparator<String>() {
 
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.compareTo(o2);
-            }
-        });
+                    @Override
+                    public int compare(String o1, String o2) {
+                        return o1.compareTo(o2);
+                    }
+                });
 
         for (String s : outputDictionary) {
             System.out.println(s);

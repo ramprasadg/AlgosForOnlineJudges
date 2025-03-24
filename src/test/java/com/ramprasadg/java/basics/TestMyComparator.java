@@ -1,21 +1,19 @@
 package com.ramprasadg.java.basics;
 
-import java.util.Arrays;
-
 import static org.junit.Assert.*;
 
 import java.util.*;
-
+import java.util.Arrays;
 import org.junit.Test;
 
 public class TestMyComparator {
     @Test
     public void testUsingLambda() {
-        Integer[] arr = { 1, 3, 2 };
+        Integer[] arr = {1, 3, 2};
         List<Integer> list = new ArrayList<Integer>(Arrays.asList(arr));
 
         // sort 1,2,3
-        Collections.sort(list, (a, b) -> a-b);
+        Collections.sort(list, (a, b) -> a - b);
         assertEquals(Integer.valueOf(1), list.get(0));
         assertEquals(Integer.valueOf(3), list.get(2));
 
@@ -25,7 +23,7 @@ public class TestMyComparator {
         assertEquals(Integer.valueOf(3), list.get(2));
 
         // reverse sort 3,2,1
-        Collections.sort(list, (a, b) -> b-a);
+        Collections.sort(list, (a, b) -> b - a);
         assertEquals(Integer.valueOf(3), list.get(0));
         assertEquals(Integer.valueOf(1), list.get(2));
 
@@ -45,18 +43,18 @@ public class TestMyComparator {
                 return name;
             }
 
-            public Student (String name, int age) {
+            public Student(String name, int age) {
                 this.name = name;
                 this.age = age;
             }
         }
 
         List<Student> list = new ArrayList<Student>();
-        Student s1 = new Student("1",1);
+        Student s1 = new Student("1", 1);
         list.add(s1);
-        Student s3 = new Student("3",3);
+        Student s3 = new Student("3", 3);
         list.add(s3);
-        Student s2 = new Student("2",2);
+        Student s2 = new Student("2", 2);
         list.add(s2);
 
         assertEquals(s1, list.get(0));

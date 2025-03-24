@@ -9,10 +9,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 
-/**
- * Created by Manikandan on 10/29/2016.
- */
-public class MostRecentlyInsertedBlockingQueue<T> extends AbstractQueue<T> implements BlockingQueue<T> {
+/** Created by Manikandan on 10/29/2016. */
+public class MostRecentlyInsertedBlockingQueue<T> extends AbstractQueue<T>
+        implements
+            BlockingQueue<T> {
 
     private Node dummy = new Node(null);
     private Node head;
@@ -190,7 +190,6 @@ public class MostRecentlyInsertedBlockingQueue<T> extends AbstractQueue<T> imple
                 offerLock.unlock();
                 pollLock.unlock();
             }
-
         }
 
         public boolean hasNext() {
@@ -226,14 +225,16 @@ public class MostRecentlyInsertedBlockingQueue<T> extends AbstractQueue<T> imple
     private void offerAndPrint(T t) {
         offerLock.lock();
         offer(t);
-        System.out.println("Thread=" + Thread.currentThread().getName() + " Added=" + t + " Size=" + size());
+        System.out.println(
+                "Thread=" + Thread.currentThread().getName() + " Added=" + t + " Size=" + size());
         offerLock.unlock();
     }
 
     private T pollAndPrint() {
         pollLock.lock();
         T t = poll();
-        System.out.println("Thread=" + Thread.currentThread().getName() + " Polled=" + t + " Size=" + size());
+        System.out.println(
+                "Thread=" + Thread.currentThread().getName() + " Polled=" + t + " Size=" + size());
         pollLock.unlock();
         return t;
     }
@@ -241,7 +242,8 @@ public class MostRecentlyInsertedBlockingQueue<T> extends AbstractQueue<T> imple
     private T peekAndPrint() {
         pollLock.lock();
         T t = peek();
-        System.out.println("Thread=" + Thread.currentThread().getName() + " Peeked=" + t + " Size=" + size());
+        System.out.println(
+                "Thread=" + Thread.currentThread().getName() + " Peeked=" + t + " Size=" + size());
         pollLock.unlock();
         return t;
     }
@@ -274,18 +276,19 @@ public class MostRecentlyInsertedBlockingQueue<T> extends AbstractQueue<T> imple
         }
 
         public void run() {
-             queue.offerAndPrint(4);
-             queue.offerAndPrint(5);
-             queue.pollAndPrint();
-             queue.offerAndPrint(6);
-             queue.offerAndPrint(7);
-             queue.pollAndPrint();
+            queue.offerAndPrint(4);
+            queue.offerAndPrint(5);
+            queue.pollAndPrint();
+            queue.offerAndPrint(6);
+            queue.offerAndPrint(7);
+            queue.pollAndPrint();
         }
     }
 
     public static void main(String[] args) throws InterruptedException {
 
-        MostRecentlyInsertedBlockingQueue<Integer> queue = new MostRecentlyInsertedBlockingQueue<Integer>(3);
+        MostRecentlyInsertedBlockingQueue<Integer> queue = new MostRecentlyInsertedBlockingQueue<Integer>(
+                3);
 
         Thread t1 = new Thread(new Runnable1(queue));
         Thread t2 = new Thread(new Runnable2(queue));

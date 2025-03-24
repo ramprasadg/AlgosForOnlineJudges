@@ -10,7 +10,7 @@ public class BalancedSmileys {
         for (int i = 0; i < expression.length; i++) {
             result[i] = is_balanced(expression[i]) ? "YES" : "NO";
         }
-        
+
         return result;
     }
 
@@ -32,8 +32,9 @@ public class BalancedSmileys {
             return is_balanced(string, startIndex + 1, openParanthesis + 1);
         } else if (ch == ')') {
             return is_balanced(string, startIndex + 1, openParanthesis - 1);
-        } else if(ch == ':') {
-            return is_balanced(string, startIndex + 1, openParanthesis) || is_balanced(string, startIndex + 2, openParanthesis);
+        } else if (ch == ':') {
+            return is_balanced(string, startIndex + 1, openParanthesis)
+                    || is_balanced(string, startIndex + 2, openParanthesis);
         } else {
             return is_balanced(string, startIndex + 1, openParanthesis);
         }
@@ -43,27 +44,27 @@ public class BalancedSmileys {
     public void test1() {
         assertTrue(is_balanced("Start :):)"));
     }
-    
+
     @Test
     public void test2() {
         assertTrue(is_balanced("(:)"));
     }
-    
+
     @Test
     public void test3() {
         assertTrue(is_balanced("Today (:()"));
     }
-    
+
     @Test
     public void test4() {
         assertFalse(is_balanced(")("));
     }
-    
+
     @Test
     public void test5() {
         assertFalse(is_balanced(":(("));
     }
-    
+
     @Test
     public void testa1() {
         assertTrue(is_balanced(""));

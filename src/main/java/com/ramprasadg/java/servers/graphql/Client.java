@@ -3,18 +3,17 @@ package com.ramprasadg.java.servers.graphql;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 
 public class Client {
     private static final Logger logger = LoggerFactory.getLogger(Client.class);
@@ -58,7 +57,8 @@ public class Client {
             ObjectNode queryNode = objectMapper.createObjectNode();
             queryNode.put("query", query);
 
-            StringEntity requestEntity = new StringEntity(queryNode.toString(), StandardCharsets.UTF_8);
+            StringEntity requestEntity = new StringEntity(queryNode.toString(),
+                    StandardCharsets.UTF_8);
             httpPost.setEntity(requestEntity);
 
             CloseableHttpResponse response = httpClient.execute(httpPost);

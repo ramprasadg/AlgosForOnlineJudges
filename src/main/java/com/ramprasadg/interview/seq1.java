@@ -1,4 +1,5 @@
 package com.ramprasadg.interview;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -33,8 +34,8 @@ public class seq1 {
     }
 
     public static void main(String args[]) {
-        int[] f = { 2, 3, 1, 1 };
-        int[] m = { 4, 7, 6 };
+        int[] f = {2, 3, 1, 1};
+        int[] m = {4, 7, 6};
         int[] output = sortIntersect(f, m);
         System.out.println("result");
         for (int o : output) {

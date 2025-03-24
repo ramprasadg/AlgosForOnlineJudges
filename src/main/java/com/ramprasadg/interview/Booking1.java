@@ -1,4 +1,5 @@
 package com.ramprasadg.interview;
+
 import java.util.Scanner;
 
 public class Booking1 {

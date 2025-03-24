@@ -1,6 +1,5 @@
 package com.ramprasadg.generic.datastructures;
 
-//decrease & increase keys
+// decrease & increase keys
 public class Heap {
-
 }

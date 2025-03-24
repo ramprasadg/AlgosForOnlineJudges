@@ -1,8 +1,5 @@
 package com.ramprasadg.java.servers.graphql.data;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Database {
     private static final Logger logger = LoggerFactory.getLogger(Database.class);
@@ -28,17 +27,17 @@ public class Database {
     }
 
     private void createTables(Connection conn) throws SQLException {
-        String createUserTable = "CREATE TABLE IF NOT EXISTS users (" +
-                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "name TEXT NOT NULL," +
-                "email TEXT UNIQUE NOT NULL)";
+        String createUserTable = "CREATE TABLE IF NOT EXISTS users ("
+                + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + "name TEXT NOT NULL,"
+                + "email TEXT UNIQUE NOT NULL)";
 
-        String createPostTable = "CREATE TABLE IF NOT EXISTS posts (" +
-                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "title TEXT NOT NULL," +
-                "content TEXT NOT NULL," +
-                "userId INTEGER NOT NULL," +
-                "FOREIGN KEY (userId) REFERENCES users(id))";
+        String createPostTable = "CREATE TABLE IF NOT EXISTS posts ("
+                + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + "title TEXT NOT NULL,"
+                + "content TEXT NOT NULL,"
+                + "userId INTEGER NOT NULL,"
+                + "FOREIGN KEY (userId) REFERENCES users(id))";
 
         try (Statement stmt = conn.createStatement()) {
             stmt.execute(createUserTable);
@@ -51,14 +50,10 @@ public class Database {
         List<User> users = new ArrayList<>();
         String sql = "SELECT id, name, email FROM users";
         try (Connection conn = DriverManager.getConnection(DB_URL);
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
-                User user = new User(
-                    rs.getInt("id"), 
-                    rs.getString("name"),
-                    rs.getString("email")
-                );
+                User user = new User(rs.getInt("id"), rs.getString("name"), rs.getString("email"));
                 users.add(user);
             }
         } catch (SQLException e) {
@@ -70,15 +65,11 @@ public class Database {
     public User getUserById(int id) {
         String sql = "SELECT id, name, email FROM users WHERE id = ?";
         try (Connection conn = DriverManager.getConnection(DB_URL);
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, id);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    return new User(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("email")
-                    );
+                    return new User(rs.getInt("id"), rs.getString("name"), rs.getString("email"));
                 }
             }
         } catch (SQLException e) {
@@ -91,11 +82,15 @@ public class Database {
         List<Post> posts = new ArrayList<>();
         String sql = "SELECT id, title, content, userId FROM posts WHERE userId = ?";
         try (Connection conn = DriverManager.getConnection(DB_URL);
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, userId);
             try (ResultSet rs = pstmt.executeQuery()) {
                 while (rs.next()) {
-                    Post post = new Post(rs.getInt("id"), rs.getString("title"), rs.getString("content"), rs.getInt("userId"));
+                    Post post = new Post(
+                            rs.getInt("id"),
+                            rs.getString("title"),
+                            rs.getString("content"),
+                            rs.getInt("userId"));
                     posts.add(post);
                 }
             }
@@ -108,15 +103,13 @@ public class Database {
     public Post getPostById(int id) {
         String sql = "SELECT id, title, content, userId FROM posts WHERE id = ?";
         try (Connection conn = DriverManager.getConnection(DB_URL);
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, id);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
                     return new Post(
-                        rs.getInt("id"),
-                        rs.getString("title"),
-                        rs.getString("content"),
-                        rs.getInt("userId"));
+                            rs.getInt("id"), rs.getString("title"), rs.getString("content"),
+                            rs.getInt("userId"));
                 }
             }
         } catch (SQLException e) {
@@ -129,10 +122,14 @@ public class Database {
         List<Post> posts = new ArrayList<>();
         String sql = "SELECT id, title, content, userId FROM posts";
         try (Connection conn = DriverManager.getConnection(DB_URL);
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
-                Post post = new Post(rs.getInt("id"), rs.getString("title"), rs.getString("content"), rs.getInt("userId"));
+                Post post = new Post(
+                        rs.getInt("id"),
+                        rs.getString("title"),
+                        rs.getString("content"),
+                        rs.getInt("userId"));
                 posts.add(post);
             }
         } catch (SQLException e) {
@@ -144,7 +141,7 @@ public class Database {
     public void addUser(User user) {
         String sql = "INSERT INTO users (name, email) VALUES (?, ?)";
         try (Connection conn = DriverManager.getConnection(DB_URL);
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, user.getName());
             pstmt.setString(2, user.getEmail());
             pstmt.executeUpdate();
@@ -161,7 +158,7 @@ public class Database {
     public void addPost(Post post) {
         String sql = "INSERT INTO posts (title, content, userId) VALUES (?, ?, ?)";
         try (Connection conn = DriverManager.getConnection(DB_URL);
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, post.getTitle());
             pstmt.setString(2, post.getContent());
             pstmt.setInt(3, post.getUserId());
@@ -172,4 +169,3 @@ public class Database {
         }
     }
 }
-

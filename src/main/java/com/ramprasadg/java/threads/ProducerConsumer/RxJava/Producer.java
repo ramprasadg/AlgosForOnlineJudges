@@ -12,9 +12,11 @@ public class Producer {
     Random random = new Random();
 
     public Producer() {
-        producerFlowable = Flowable.create(emitter -> {
-            produce(emitter);
-        }, BackpressureStrategy.BUFFER);
+        producerFlowable = Flowable.create(
+                emitter -> {
+                    produce(emitter);
+                },
+                BackpressureStrategy.BUFFER);
         producerFlowable.subscribeOn(Schedulers.newThread()); // Run production on a separate thread
     }
 

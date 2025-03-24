@@ -92,5 +92,4 @@ public class LRUCache {
         lru.referPage(1);
         lru.referPage(5);
     }
-
 }

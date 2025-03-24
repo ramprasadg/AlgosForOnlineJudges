@@ -1,9 +1,9 @@
 package com.ramprasadg.java.threads.ProducerConsumer.WaitNotify;
 
-import java.util.Random;
 import java.util.Queue;
+import java.util.Random;
 
-public class Producer implements Runnable{
+public class Producer implements Runnable {
 
     final int MAX_SIZE = 3;
     Queue<Integer> queue;
@@ -18,10 +18,10 @@ public class Producer implements Runnable{
             Thread.sleep(1_000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        };
+        } ;
         Random random = new Random();
         long currentTime = System.currentTimeMillis();
-        while(true) {
+        while (true) {
             synchronized (queue) {
                 while (queue.size() >= MAX_SIZE) {
                     try {
@@ -39,7 +39,7 @@ public class Producer implements Runnable{
                 System.out.println("Produced: " + i);
             }
 
-            if(System.currentTimeMillis() - currentTime > 10_000) {
+            if (System.currentTimeMillis() - currentTime > 10_000) {
                 break;
             }
         }

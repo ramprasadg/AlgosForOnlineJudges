@@ -1,4 +1,5 @@
 package com.ramprasadg.interview;
+
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -87,8 +88,11 @@ public class c3iot1 {
             visited.add(point);
         }
 
-        System.out.println(String.format("%s distanceToJerry=%d remainingCheese=%d", point,
-                distanceMatrix[point.x][point.y][jerry.x][jerry.y], remaining.size()));
+        System.out.println(
+                String.format(
+                        "%s distanceToJerry=%d remainingCheese=%d",
+                        point, distanceMatrix[point.x][point.y][jerry.x][jerry.y],
+                        remaining.size()));
 
         if (remaining.isEmpty()) {
             System.out.println("foundAPath");
@@ -130,8 +134,8 @@ public class c3iot1 {
     }
 
     public static int[][][][] bfsVisit(Point start) {
-        int[] x = { 0, 0, 1, -1 };// This represent 4 directions right, left,
-        int[] y = { 1, -1, 0, 0 };// down , up
+        int[] x = {0, 0, 1, -1}; // This represent 4 directions right, left,
+        int[] y = {1, -1, 0, 0}; // down , up
         LinkedList<Point> q = new LinkedList<Point>();
         q.add(start);
 
@@ -140,8 +144,11 @@ public class c3iot1 {
             for (int i = 0; i < 4; i++) {
                 int a = p.x + x[i];
                 int b = p.y + y[i];
-                if (!(a == start.x && b == start.y) && isValid(a, b) && distanceMatrix[start.x][start.y][a][b] == 0) {
-                    distanceMatrix[start.x][start.y][a][b] = 1 + distanceMatrix[start.x][start.y][p.x][p.y];
+                if (!(a == start.x && b == start.y)
+                        && isValid(a, b)
+                        && distanceMatrix[start.x][start.y][a][b] == 0) {
+                    distanceMatrix[start.x][start.y][a][b] = 1
+                            + distanceMatrix[start.x][start.y][p.x][p.y];
                     q.add(new Point(a, b));
                 }
             }
@@ -151,16 +158,16 @@ public class c3iot1 {
     }
 
     public static void main(String args[]) {
-        int[][] maze1 = { { 0, 2, 0 }, { 0, 0, 1 }, { 1, 1, 1 } };
+        int[][] maze1 = {{0, 2, 0}, {0, 0, 1}, {1, 1, 1}};
         System.out.println("ans1: " + minMoves(maze1, 1, 1));
 
-        int[][] maze2 = { { 0, 1, 0 }, { 1, 0, 1 }, { 0, 2, 2 } };
+        int[][] maze2 = {{0, 1, 0}, {1, 0, 1}, {0, 2, 2}};
         System.out.println("ans2: " + minMoves(maze2, 1, 1));
 
-        int[][] maze3 = { { 0, 2, 0 }, { 1, 1, 2 }, { 1, 0, 0 } };
+        int[][] maze3 = {{0, 2, 0}, {1, 1, 2}, {1, 0, 0}};
         System.out.println("ans3: " + minMoves(maze3, 2, 1));
 
-        int[][] maze4 = { { 0, 0, 2 }, { 0, 0, 0 }, { 0, 2, 0 } };
+        int[][] maze4 = {{0, 0, 2}, {0, 0, 0}, {0, 2, 0}};
         System.out.println("ans4: " + minMoves(maze4, 2, 2));
     }
 }

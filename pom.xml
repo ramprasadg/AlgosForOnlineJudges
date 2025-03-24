@@ -165,6 +165,14 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        <plugin>
+            <groupId>net.revelc.code.formatter</groupId>
+            <artifactId>formatter-maven-plugin</artifactId>
+            <version>2.23.0</version>
+            <configuration>
+                <configFile>${project.basedir}/.vscode/java-formatter.xml</configFile>
+            </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>

@@ -3,7 +3,6 @@ package com.ramprasadg.interview;
 import static org.junit.Assert.*;
 
 import java.util.*;
-
 import org.junit.Test;
 
 public class ZenefitsTopologicalSort {
@@ -57,9 +56,9 @@ public class ZenefitsTopologicalSort {
 
     @Test
     public void test1() {
-        int[][] dependency = { { 2, 1 }, { 3, 1 }, { 4, 1 }, { 5, 3 }, { 3, 2 }, { 4, 2 }, { 4, 3 }, { 5, 4 } };
+        int[][] dependency = {{2, 1}, {3, 1}, {4, 1}, {5, 3}, {3, 2}, {4, 2}, {4, 3}, {5, 4}};
 
-        int[] arr = { 5, 4, 3, 2, 1 };
+        int[] arr = {5, 4, 3, 2, 1};
         int[] output = taskOrdering(dependency);
         for (int i = 0; i < arr.length; i++) {
             assertEquals(output[i], arr[i]);

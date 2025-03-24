@@ -2,11 +2,10 @@ package com.ramprasadg.generic.string;
 
 import static org.junit.Assert.*;
 
+import com.ramprasadg.utils.Utils;
 import org.junit.Test;
 
-import com.ramprasadg.utils.Utils;
-
-//http://www.geeksforgeeks.org/dynamic-programming-set-28-minimum-insertions-to-form-a-palindrome/
+// http://www.geeksforgeeks.org/dynamic-programming-set-28-minimum-insertions-to-form-a-palindrome/
 public class MinimumInsertionsForPalindrome {
     int minimumInsertions1(String s) {
         if (s == null || s.length() == 0) {
@@ -23,8 +22,10 @@ public class MinimumInsertionsForPalindrome {
         if (firstChar == lastChar) {
             return minimumInsertions1(s.substring(1, s.length() - 1));
         } else {
-            return Math.min(minimumInsertions1(s.substring(1, s.length())),
-                    minimumInsertions1(s.substring(0, s.length() - 1))) + 1;
+            return Math.min(
+                    minimumInsertions1(s.substring(1, s.length())),
+                    minimumInsertions1(s.substring(0, s.length() - 1)))
+                    + 1;
         }
     }
 
@@ -41,7 +42,8 @@ public class MinimumInsertionsForPalindrome {
                 char firstChar = s.charAt(start);
                 char lastChar = s.charAt(start + length - 1);
 
-                System.out.println("length=" + length + " firstChar=" + firstChar + " lastChar=" + lastChar);
+                System.out.println(
+                        "length=" + length + " firstChar=" + firstChar + " lastChar=" + lastChar);
                 if (firstChar != lastChar) {
                     int insertLastChar = arr[start][length - 1];
                     int insertFirstChar = Integer.MAX_VALUE;

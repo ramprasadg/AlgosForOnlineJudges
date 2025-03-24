@@ -2,7 +2,7 @@ package com.ramprasadg.interview.google.skyline;
 
 import java.util.*;
 
-//https://discuss.leetcode.com/topic/63656/java-solution-divide-and-conquer-beat-95
+// https://discuss.leetcode.com/topic/63656/java-solution-divide-and-conquer-beat-95
 public class DivideAndConquer {
     public List<int[]> getSkyline(int[][] buildings) {
         List<int[]> result = new ArrayList<int[]>();
@@ -12,7 +12,7 @@ public class DivideAndConquer {
     }
 
     public static int[] getPoint(int x, int y) {
-        int[] temp = { x, y };
+        int[] temp = {x, y};
         return temp;
     }
 

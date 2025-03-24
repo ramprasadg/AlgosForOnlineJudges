@@ -1,19 +1,19 @@
 package com.ramprasadg.java.servers.graphql;
 
+import com.ramprasadg.java.servers.graphql.data.DataFetchers;
 import com.ramprasadg.java.servers.graphql.data.Database;
 import com.ramprasadg.java.servers.graphql.data.PostRepository;
-import com.ramprasadg.java.servers.graphql.data.UserRepository;
-import com.ramprasadg.java.servers.graphql.data.DataFetchers;
 import com.ramprasadg.java.servers.graphql.data.Provider;
-import graphql.kickstart.servlet.GraphQLConfiguration;
+import com.ramprasadg.java.servers.graphql.data.UserRepository;
 import graphql.kickstart.execution.config.GraphQLSchemaProvider;
+import graphql.kickstart.servlet.GraphQLConfiguration;
 import graphql.kickstart.servlet.GraphQLHttpServlet;
 import graphql.schema.GraphQLSchema;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);

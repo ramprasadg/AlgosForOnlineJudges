@@ -14,7 +14,7 @@ public class seq2 {
         int b1 = Math.min(a, b);
         int c1 = Math.max(c, d);
         int d1 = Math.min(c, d);
-        
+
         if (c >= a && d >= b && gcd(a1, b1) == gcd(c1, d1)) {
             return "Yes";
         } else {

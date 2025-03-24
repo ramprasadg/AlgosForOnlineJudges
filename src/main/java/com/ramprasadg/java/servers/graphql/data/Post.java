@@ -29,4 +29,3 @@ public class Post {
         return userId;
     }
 }
-

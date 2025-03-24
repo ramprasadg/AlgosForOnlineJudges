@@ -53,7 +53,7 @@ public class FlipBit {
         }
 
         for (int j = 0; j < n; j++) {
-            if (a[0][j] == 0 || ((j > 0) && T[0][j-1] == 0)) {
+            if (a[0][j] == 0 || ((j > 0) && T[0][j - 1] == 0)) {
                 T[0][j] = 0;
             } else {
                 T[0][j] = 1;
@@ -64,7 +64,6 @@ public class FlipBit {
                 if (a[i][j] != 0) {
                     T[i][j] = (T[i - 1][j] + T[i][j - 1]) % mod;
                 }
-
             }
         }
         return T[m - 1][n - 1];

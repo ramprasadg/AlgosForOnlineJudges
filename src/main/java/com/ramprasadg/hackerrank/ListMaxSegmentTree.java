@@ -2,21 +2,21 @@ package com.ramprasadg.hackerrank;
 
 /*
  * HACKERRANK INTERVIEW QUESTION
- * 
+ *
  * You are given a list of size N, initialized with zeroes. You have to perform M queries on the list and output the
  * maximum of final values of all the N elements in the list. For every query, you are given three integers a, b and k and
  * you have to add value k to all the elements ranging from index a to b(both inclusive).
- * 
+ *
  * Input Format
  * First line will contain two integers N and M separated by a single space.
  * Next M lines will contain three integers a, b and k separated by a single space.
  * Numbers in list are numbered from 1 to N.
- * 
+ *
  * Output Format
  * A single line containing maximum value in the final list.
  */
 
-//Algo explained in https://www.youtube.com/watch?v=xuoQdt5pHj0
+// Algo explained in https://www.youtube.com/watch?v=xuoQdt5pHj0
 
 public class ListMaxSegmentTree {
     public static class Operation {
@@ -68,7 +68,16 @@ public class ListMaxSegmentTree {
         else if (o.end < start)
             return Integer.MIN_VALUE;;
         System.err.println(
-                "Start:" + start + " End:" + end + " Pos:" + pos + " Op.start:" + o.start + " Op.end:" + o.end);
+                "Start:"
+                        + start
+                        + " End:"
+                        + end
+                        + " Pos:"
+                        + pos
+                        + " Op.start:"
+                        + o.start
+                        + " Op.end:"
+                        + o.end);
 
         if (pos >= tree.length) {
             return 0;
@@ -127,7 +136,7 @@ public class ListMaxSegmentTree {
             System.err.print(i + ", ");
 
         System.err.println();
-        
+
         System.err.print(tree[0]);
     }
 }

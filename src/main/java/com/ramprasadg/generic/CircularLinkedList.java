@@ -5,7 +5,7 @@ public class CircularLinkedList {
     static class CNode {
         CNode next;
         int value;
-        
+
         CNode(int value) {
             this.value = value;
             next = this;
@@ -14,33 +14,32 @@ public class CircularLinkedList {
 
     static CNode insert(CNode start, int value) {
         CNode newNode = new CNode(value);
-        
-        if(start != null) {
+
+        if (start != null) {
             CNode largestNode = start;
-            while(largestNode.next.value > largestNode.value) {
+            while (largestNode.next.value > largestNode.value) {
                 largestNode = largestNode.next;
             }
-            
+
             CNode smallestNode = largestNode.next;
-            
-            if(newNode.value < smallestNode.value || newNode.value > largestNode.value) {
+
+            if (newNode.value < smallestNode.value || newNode.value > largestNode.value) {
                 largestNode.next = newNode;
                 newNode.next = smallestNode;
             } else {
                 CNode prev = smallestNode;
                 CNode next = smallestNode.next;
-                
-                while(next.value < value) {
+
+                while (next.value < value) {
                     prev = next;
                     next = next.next;
                 }
-                
+
                 prev.next = newNode;
                 newNode.next = next;
             }
-            
         }
-        
+
         return newNode;
     }
 
@@ -65,5 +64,4 @@ public class CircularLinkedList {
         start = insert(start, 0);
         print(start);
     }
-
 }

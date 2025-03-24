@@ -3,7 +3,6 @@ package com.ramprasadg.interview.asana;
 import static org.junit.Assert.*;
 
 import java.util.*;
-
 import org.junit.Test;
 
 public class HungryRabbit {
@@ -68,8 +67,8 @@ public class HungryRabbit {
         safeSetValue(arr, posI, posJ, 0);
         int bestVal = safeGetValue(arr, nextBestI, nextBestJ);
 
-        int[] movesI = { 0, 0, 1, -1 };
-        int[] movesJ = { 1, -1, 0, 0 };
+        int[] movesI = {0, 0, 1, -1};
+        int[] movesJ = {1, -1, 0, 0};
 
         for (int i = 0; i < movesI.length; i++) {
             int nextI = posI + movesI[i];
@@ -102,62 +101,61 @@ public class HungryRabbit {
 
     @Test
     public void test1() {
-        int arr[][] = { { 5, 7, 8, 6, 3 }, { 0, 0, 7, 0, 4 }, { 4, 6, 3, 4, 9 }, { 3, 1, 0, 5, 8 } };
+        int arr[][] = {{5, 7, 8, 6, 3}, {0, 0, 7, 0, 4}, {4, 6, 3, 4, 9}, {3, 1, 0, 5, 8}};
         assertEquals(27, totalCarrots(arr));
     }
 
     @Test
     public void test2() {
-        int arr[][] = { { 1 }, { 1 } };
+        int arr[][] = {{1}, {1}};
         assertEquals(2, totalCarrots(arr));
     }
 
     @Test
     public void test3() {
-        int arr[][] = { { 1 }, { 2 } };
+        int arr[][] = {{1}, {2}};
         assertEquals(3, totalCarrots(arr));
     }
 
     @Test
     public void test4() {
-        int arr[][] = { { 2 }, { 1 } };
+        int arr[][] = {{2}, {1}};
         assertEquals(3, totalCarrots(arr));
     }
 
     @Test
     public void test5() {
-        int arr[][] = { { 1 } };
+        int arr[][] = {{1}};
         assertEquals(1, totalCarrots(arr));
     }
 
     @Test
     public void test6() {
-        int arr[][] = { { 1, 2 } };
+        int arr[][] = {{1, 2}};
         assertEquals(3, totalCarrots(arr));
     }
 
     @Test
     public void test7() {
-        int arr[][] = { { 2, 1 } };
+        int arr[][] = {{2, 1}};
         assertEquals(3, totalCarrots(arr));
     }
 
     @Test
     public void test8() {
-        int arr[][] = { { 1, 3, 6, 7 }, { 4, 2, 5, 3 }, { 5, 3, 4, 8 } };
+        int arr[][] = {{1, 3, 6, 7}, {4, 2, 5, 3}, {5, 3, 4, 8}};
         assertEquals(51, totalCarrots(arr));
     }
-    
+
     @Test
     public void test9() {
-        int arr[][] = { { } };
+        int arr[][] = {{}};
         assertEquals(0, totalCarrots(arr));
     }
-    
+
     @Test
     public void test10() {
-        int arr[][] = { { 1, 3, 6, 7 }, { 4, 2, 5, 3 }, { 5, 0, 4, 8 } };
+        int arr[][] = {{1, 3, 6, 7}, {4, 2, 5, 3}, {5, 0, 4, 8}};
         assertEquals(33, totalCarrots(arr));
     }
-
 }

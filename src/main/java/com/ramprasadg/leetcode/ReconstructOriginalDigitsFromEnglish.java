@@ -3,10 +3,9 @@ package com.ramprasadg.leetcode;
 import static org.junit.Assert.*;
 
 import java.util.HashMap;
-
 import org.junit.Test;
 
-//https://leetcode.com/problems/reconstruct-original-digits-from-english/
+// https://leetcode.com/problems/reconstruct-original-digits-from-english/
 public class ReconstructOriginalDigitsFromEnglish {
     String[] num;
 
@@ -45,7 +44,7 @@ public class ReconstructOriginalDigitsFromEnglish {
         constructNumberMap();
         HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
         populateHashMap(hm, s, 0, s.length());
-        
+
         int k = 0;
         while (hm.size() > 0 && k++ < 2) {
             for (int i = 0; i < num.length; i++) {
@@ -54,20 +53,20 @@ public class ReconstructOriginalDigitsFromEnglish {
                 for (; j < num1.length(); j++) {
                     char a = num1.charAt(j);
                     Integer b = hm.get(a);
-                    
+
                     if (b == null || b <= 0) {
-                        if(j > 0) {
-                            //System.out.println("adding part of" + num1);
+                        if (j > 0) {
+                            // System.out.println("adding part of" + num1);
                             populateHashMap(hm, num1, 0, j + 1);
                         }
                         break;
                     } else {
                         if (1 == b) {
-                            //System.out.println("removing " + a);
+                            // System.out.println("removing " + a);
                             hm.remove(a);
-                            //System.out.println(hm.size());
+                            // System.out.println(hm.size());
                         } else {
-                            //System.out.println("reducing " + a + " " + (b-1));
+                            // System.out.println("reducing " + a + " " + (b-1));
                             hm.put(a, b - 1);
                         }
                     }
@@ -81,20 +80,19 @@ public class ReconstructOriginalDigitsFromEnglish {
         StringBuilder ret = new StringBuilder();
 
         for (int i = 0; i < 10; i++) {
-            for(int j = 0; j<res.get(i); j++) {
+            for (int j = 0; j < res.get(i); j++) {
                 ret.append(String.valueOf(i));
             }
         }
 
         return ret.toString();
-
     }
-    
+
     @Test
     public void test1() {
         assertEquals(originalDigits("owoztneoer"), "012");
     }
-    
+
     @Test
     public void test2() {
         assertEquals(originalDigits("owoztneoerzero"), "0012");

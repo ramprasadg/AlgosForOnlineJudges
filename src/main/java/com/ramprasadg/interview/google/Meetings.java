@@ -3,9 +3,8 @@ package com.ramprasadg.interview.google;
 import java.util.PriorityQueue;
 
 /**
- * Definition for an interval. public class Interval { int start; int end;
- * Interval() { start = 0; end = 0; } Interval(int s, int e) { start = s; end =
- * e; } }
+ * Definition for an interval. public class Interval { int start; int end; Interval() { start = 0;
+ * end = 0; } Interval(int s, int e) { start = s; end = e; } }
  */
 public class Meetings {
     static final int START = 1;
@@ -37,7 +36,8 @@ public class Meetings {
     }
 
     public int minMeetingRooms(Interval[] intervals) {
-        PriorityQueue<Event> events = new PriorityQueue<Event>((a, b) -> (a.time != b.time) ? a.time - b.time : a.type - b.type);
+        PriorityQueue<Event> events = new PriorityQueue<Event>(
+                (a, b) -> (a.time != b.time) ? a.time - b.time : a.type - b.type);
 
         for (int i = 0; i < intervals.length; i++) {
             Interval interval = intervals[i];

@@ -2,7 +2,7 @@ package com.ramprasadg.generic;
 
 /*
  * http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/
- * 
+ *
  * given a set of denominations {d1, d2, ... dn} and target amount n, how many ways can n be formed
  */
 
@@ -15,8 +15,8 @@ public class CoinChange {
         this.n = n;
         this.denominations = d;
         numberOfWays = new int[n + 1][denominations.length];
-        
-        //there is only one unique way of making 0
+
+        // there is only one unique way of making 0
         for (int i = 0; i < denominations.length; i++)
             numberOfWays[0][i] = 1;
 
@@ -28,7 +28,8 @@ public class CoinChange {
                     if (j > 0)
                         numberOfWaysOfFormingIWithoutUsingDj = numberOfWays[i][j - 1];
 
-                    numberOfWays[i][j] = numberOfWays[i][j] + numberOfWaysOfFormingIUsingDj
+                    numberOfWays[i][j] = numberOfWays[i][j]
+                            + numberOfWaysOfFormingIUsingDj
                             + numberOfWaysOfFormingIWithoutUsingDj;
                 }
             }
@@ -47,9 +48,8 @@ public class CoinChange {
     }
 
     public static void main(String[] args) {
-        int[] d = { 1, 2, 4 };
+        int[] d = {1, 2, 4};
         CoinChange c = new CoinChange(4, d);
         System.out.println(c.getAnswer());
     }
-
 }

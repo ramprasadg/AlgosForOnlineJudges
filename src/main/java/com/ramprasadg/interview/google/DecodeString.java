@@ -3,7 +3,6 @@ package com.ramprasadg.interview.google;
 import static org.junit.Assert.*;
 
 import java.util.Stack;
-
 import org.junit.Test;
 
 public class DecodeString {
@@ -26,7 +25,7 @@ public class DecodeString {
                 while (!stack.peek().equals("[")) {
                     strToRepeat.insert(0, stack.pop());
                 }
-                stack.pop();//discard [
+                stack.pop(); // discard [
                 int repeat = Integer.parseInt(stack.pop());
 
                 String str = strToRepeat.toString();
@@ -34,15 +33,15 @@ public class DecodeString {
 
                 while (repeat > 0) {
                     strToRepeat.append(str);
-                    repeat --;
+                    repeat--;
                 }
                 stack.push(strToRepeat.toString());
             } else {
                 stack.add(ch.toString());
             }
         }
-        
-        while (! stack.isEmpty()) {
+
+        while (!stack.isEmpty()) {
             retVal.insert(0, stack.pop());
         }
 

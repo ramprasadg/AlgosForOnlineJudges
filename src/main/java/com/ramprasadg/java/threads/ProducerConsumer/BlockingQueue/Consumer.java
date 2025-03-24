@@ -2,7 +2,7 @@ package com.ramprasadg.java.threads.ProducerConsumer.BlockingQueue;
 
 import java.util.concurrent.BlockingQueue;
 
-public class Consumer implements Runnable{
+public class Consumer implements Runnable {
 
     BlockingQueue<Integer> queue;
 
@@ -22,9 +22,9 @@ public class Consumer implements Runnable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if(System.currentTimeMillis() - currentTime > 10_000 && queue.isEmpty()) {
+            if (System.currentTimeMillis() - currentTime > 10_000 && queue.isEmpty()) {
                 break;
             }
         }
-    }    
+    }
 }
