@@ -28,9 +28,6 @@ public class Database {
     }
 
     private void createTables(Connection conn) throws SQLException {
-        String dropUserTable = "DROP TABLE IF EXISTS users";
-        String dropPostTable = "DROP TABLE IF EXISTS posts";
-
         String createUserTable = "CREATE TABLE IF NOT EXISTS users (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "name TEXT NOT NULL," +
@@ -44,8 +41,6 @@ public class Database {
                 "FOREIGN KEY (userId) REFERENCES users(id))";
 
         try (Statement stmt = conn.createStatement()) {
-            stmt.execute(dropUserTable);
-            stmt.execute(dropUserTable);
             stmt.execute(createUserTable);
             stmt.execute(createPostTable);
             logger.info("Tables created successfully");
@@ -59,7 +54,11 @@ public class Database {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
-                User user = new User(rs.getInt("id"), rs.getString("name"), rs.getString("email"));
+                User user = new User(
+                    rs.getInt("id"), 
+                    rs.getString("name"),
+                    rs.getString("email")
+                );
                 users.add(user);
             }
         } catch (SQLException e) {
@@ -113,7 +112,11 @@ public class Database {
             pstmt.setInt(1, id);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    return new Post(rs.getInt("id"), rs.getString("title"), rs.getString("content"), rs.getInt("userId"));
+                    return new Post(
+                        rs.getInt("id"),
+                        rs.getString("title"),
+                        rs.getString("content"),
+                        rs.getInt("userId"));
                 }
             }
         } catch (SQLException e) {
@@ -147,7 +150,11 @@ public class Database {
             pstmt.executeUpdate();
             logger.info("User added successfully");
         } catch (SQLException e) {
-            logger.error("Error adding user", e);
+            if (e.getMessage().contains("UNIQUE constraint failed")) {
+                logger.warn("User with email {} already exists", user.getEmail());
+            } else {
+                logger.error("Error adding user", e);
+            }
         }
     }
 

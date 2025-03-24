@@ -8,14 +8,14 @@ public class UserRepository {
     public UserRepository(Database database) {
         this.database = database;
         // Add some initial data
-        User user1 = database.getUserById(0);
+        User user1 = database.getUserById(1);
         if(user1 == null) {
-            database.addUser(new User(0, "John Doe", "john.doe@example.com"));
+            database.addUser(new User(1, "John Doe", "john.doe@example.com"));
         }
 
-        User user2 = database.getUserById(1);
+        User user2 = database.getUserById(2);
         if(user2 == null) {
-            database.addUser(new User(1, "Jane Smith", "jane.smith@example.com"));
+            database.addUser(new User(2, "Jane Smith", "jane.smith@example.com"));
         }
     }
 
